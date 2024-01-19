@@ -98,10 +98,15 @@
 	}
 
 	main {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr); /* Two columns */
-		grid-template-rows: repeat(2, auto); /* Two rows */
 		gap: 20px;
+	}
+
+	@media (min-width: 655px) {
+		main {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr); /* Two columns */
+			grid-template-rows: repeat(2, auto); /* Two rows */
+		}
 	}
 
 	section {
