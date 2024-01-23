@@ -15,7 +15,7 @@
 
 <style>
 	date{
-        padding: 1rem;
+        padding-bottom: 1rem;
     }
 	h1 {
 		margin-top: 0;
