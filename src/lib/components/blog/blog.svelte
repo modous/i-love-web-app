@@ -7,16 +7,18 @@
 	<section class="blog">
 		<h1>{title}</h1>
 		<date>{date}</date>
-		<img src={image.url} alt="" />
-		<h2>- Notes -</h2>
-		<p>{@html notes.html}</p>
+		<div>
+			<img src={image.url} alt="" />
+			<h2>- Notes -</h2>
+			<p>{@html notes.html}</p>
+		</div>
 	</section>
 {/each}
 
 <style>
-	date{
-        padding-bottom: 1rem;
-    }
+	date {
+		padding-bottom: 1rem;
+	}
 	h1 {
 		margin-top: 0;
 		color: orange;
@@ -29,11 +31,24 @@
 
 	img {
 		max-width: 80%;
-		height: 400px;
-		width: 400px; /* Adjust this percentage as needed */
+		height: 50%;
+		width: 50%; /* Adjust this percentage as needed */
 		border-radius: 8px; /* Optional: Add a border-radius for rounded corners */
 	}
 
+	.blog:hover div {
+		display: block;
+		height: auto;
+	}
+
+	@media (min-width: 655px) {
+		.blog div {
+			display: none;
+			overflow: hidden;
+			height: 0;
+			transition: height 0.5s ease;
+		}
+	}
 
 	section {
 		display: flex;
@@ -62,6 +77,4 @@
 			transform: scale(1);
 		}
 	}
-
-    
 </style>
