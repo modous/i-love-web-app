@@ -19,10 +19,6 @@
 	date {
 		padding-bottom: 1rem;
 	}
-	h1 {
-		margin-top: 0;
-		color: orange;
-	}
 
 	h2 {
 		/* color: #4a90e2;  */
