@@ -5,7 +5,7 @@
 
 {#each data.blogs as { title, date, image, notes } (title)}
 	<section class="blog">
-		<h1>{title}</h1>
+		<h2>{title}</h2>
 		<date>{date}</date>
 		<div>
 			<img src={image.url} alt="" />
@@ -38,6 +38,7 @@
 
 	.blog:hover div {
 		display: block;
+		transition-duration: 3s;
 		height: auto;
 	}
 
@@ -46,7 +47,6 @@
 			display: none;
 			overflow: hidden;
 			height: 0;
-			transition: height 0.5s ease;
 		}
 	}
 
