@@ -43,27 +43,11 @@
 	.We-Love-Web {
 		text-align: center;
 		color: white;
-		animation-name: scale;
-		animation-duration: 3s;
-		animation-iteration-count: infinite;
-	}
-
-	@keyframes scale {
-		0% {
-			transform: scale(1);
-		}
-		50% {
-			transform: scale(1.3);
-			color: #440099;
-		}
-		100% {
-			transform: scale(1);
-		}
 	}
 
 	.We-Love-Web span {
 		display: inline-block;
-		animation: spin 1s;
+		animation: spin 2s;
 	}
 
 	.We-Love-Web span:nth-child(1) {
