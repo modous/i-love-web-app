@@ -1,9 +1,10 @@
-<img width="1370" alt="image" src="https://github.com/modous/i-love-web-app/assets/34092733/3cda5858-a838-4c14-99b0-80626d94fdc5">
+<img width="851" alt="image" src="https://github.com/modous/i-love-web-app/assets/34092733/6fc9ef0e-f204-44d6-bf19-92f7d81b66d4">
 
 
-<img width="1382" alt="image" src="https://github.com/modous/i-love-web-app/assets/34092733/b1cacf84-1395-4e6a-be68-dc1efa44095a">
+<img width="617" alt="image" src="https://github.com/modous/i-love-web-app/assets/34092733/ed5d0614-baf2-4d92-9f8e-8840e225fa44">
 
 
+<img width="615" alt="image" src="https://github.com/modous/i-love-web-app/assets/34092733/57249db1-e4a0-4fd0-bd84-f5eb9b6a82fa">
 
 
 # create-svelte
