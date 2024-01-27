@@ -7,8 +7,10 @@
 	console.log(data);
 </script>
 
-<body>
+<head>
 	<title>I Love Web</title>
+</head>
+<body>
 	<section class="header box box-inner">
 		<h1 class="We-Love-Web">
 			<span>W</span>
