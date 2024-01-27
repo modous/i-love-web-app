@@ -1,23 +1,37 @@
 <script>
 	export let data;
 	console.log('Ik ben hier:', data);
+
+	function spaNavigate(data) {
+		// Fallback for browsers that don't support this API:
+		if (!document.startViewTransition) {
+			updateTheDOMSomehow(data);
+			return;
+		}
+
+		// With a transition:
+		document.startViewTransition(() => updateTheDOMSomehow(data));
+	}
 </script>
 
 {#each data.blogs as { title, date, image, notes } (title)}
 	<section class="blog">
 		<h2>{title}</h2>
 		<date>{date}</date>
-		<div>
-			<img src={image.url} alt="" />
-			<h2>- Notes -</h2>
-			<p>{@html notes.html}</p>
-		</div>
+		<!-- <div class="imageReadmore"> -->
+		<img src={image.url} alt="" />
+		<a class="readMore" href="">read more ></a>
+		<!-- </div> -->
 	</section>
 {/each}
 
 <style>
 	date {
 		padding-bottom: 1rem;
+	}
+	h2 {
+		margin-top: 0;
+		color: orange;
 	}
 
 	h2 {
@@ -26,24 +40,16 @@
 	}
 
 	img {
-		max-width: 80%;
-		height: 50%;
-		width: 50%; /* Adjust this percentage as needed */
+		max-width: 100%;
+		height: 200px;
+		width: 200px; /* Adjust this percentage as needed */
 		border-radius: 8px; /* Optional: Add a border-radius for rounded corners */
+		transition: transform 2s;
 	}
 
-	.blog:hover div {
-		display: block;
-		transition-duration: 3s;
-		height: auto;
-	}
-
-	@media (min-width: 655px) {
-		.blog div {
-			display: none;
-			overflow: hidden;
-			height: 0;
-		}
+	img:hover {
+		transform: scale(1.1);
+		transition-duration: 2s;
 	}
 
 	section {
@@ -62,6 +68,7 @@
 
 	.blog {
 		animation: grow 2s;
+		margin: 2rem;
 	}
 	@keyframes grow {
 		0% {
@@ -72,5 +79,59 @@
 			opacity: 100%;
 			transform: scale(1);
 		}
+	}
+
+	.readMore {
+		color: white;
+		text-decoration: none;
+		padding: 20px;
+		max-width: 100px;
+		transition: transform 2s;
+	}
+	.readMore:hover {
+		transform: scale(1.2);
+		transition-duration: 2s;
+	}
+
+	/* View transitions */
+
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 5s;
+	}
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+	}
+
+	@keyframes fade-out {
+		to {
+			opacity: 0;
+		}
+	}
+
+	@keyframes slide-from-right {
+		from {
+			transform: translateX(30px);
+		}
+	}
+
+	@keyframes slide-to-left {
+		to {
+			transform: translateX(-30px);
+		}
+	}
+
+	::view-transition-old(root) {
+		animation:
+			90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+			300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+	}
+
+	::view-transition-new(root) {
+		animation:
+			210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+			300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
 	}
 </style>

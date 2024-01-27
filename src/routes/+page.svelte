@@ -45,6 +45,7 @@
 	.We-Love-Web {
 		text-align: center;
 		color: white;
+		transition: transform 2s;
 	}
 
 	.We-Love-Web span {
@@ -105,9 +106,20 @@
 		}
 	}
 
-	section {
-		padding: 20px;
-		margin: 0;
+	@media (min-width: 955px) {
+		main {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr); /* Two columns */
+			grid-template-rows: repeat(2, auto); /* Two rows */
+		}
+	}
+
+	/* Header wave animation*/
+
+	.header {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin: 0px;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	}
 
