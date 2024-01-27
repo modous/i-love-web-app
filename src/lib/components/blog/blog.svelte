@@ -2,23 +2,23 @@
 	export let data;
 	console.log('Ik ben hier:', data.id);
 
-	function spaNavigate(data) {
-		// Fallback for browsers that don't support this API:
-		if (!document.startViewTransition) {
-			updateTheDOMSomehow(data);
-			return;
-		}
+	// function spaNavigate(data) {
+	// 	// Fallback for browsers that don't support this API:
+	// 	if (!document.startViewTransition) {
+	// 		updateTheDOMSomehow(data);
+	// 		return;
+	// 	}
 
-		// With a transition:
-		document.startViewTransition(() => updateTheDOMSomehow(data));
-	}
+	// 	// With a transition:
+	// 	document.startViewTransition(() => updateTheDOMSomehow(data));
+	// }
 </script>
 
 {#each data.blogs as { title, date, image, notes } (title)}
 	<section class="blog">
 		<h2>{title}</h2>
 		<date>{date}</date>
-		<img src={image.url} alt="" />
+		<img src={image.url} alt="event plaatje" loading="lazy" />
 		<a class="readMore" href="blog/{data.id}">read more ></a>
 	</section>
 {/each}

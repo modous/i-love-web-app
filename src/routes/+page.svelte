@@ -8,6 +8,7 @@
 </script>
 
 <body>
+	<title>I Love Web</title>
 	<section class="header box box-inner">
 		<h1 class="We-Love-Web">
 			<span>W</span>
