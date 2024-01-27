@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	console.log('Ik ben hier:', data);
+	console.log('Ik ben hier:', data.id);
 
 	function spaNavigate(data) {
 		// Fallback for browsers that don't support this API:
@@ -18,10 +18,8 @@
 	<section class="blog">
 		<h2>{title}</h2>
 		<date>{date}</date>
-		<!-- <div class="imageReadmore"> -->
 		<img src={image.url} alt="" />
-		<a class="readMore" href="">read more ></a>
-		<!-- </div> -->
+		<a class="readMore" href="blog/{data.id}">read more ></a>
 	</section>
 {/each}
 
@@ -40,6 +38,7 @@
 	}
 
 	img {
+		margin-left: 20px;
 		max-width: 100%;
 		height: 200px;
 		width: 200px; /* Adjust this percentage as needed */
@@ -86,7 +85,7 @@
 	.readMore {
 		color: orange;
 		text-decoration: none;
-		padding: 20px;
+		padding: 10px;
 		max-width: 100px;
 		transition: transform 2s;
 	}
