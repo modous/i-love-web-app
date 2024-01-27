@@ -69,6 +69,8 @@
 	.blog {
 		animation: grow 2s;
 		margin: 2rem;
+
+		box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
 	}
 	@keyframes grow {
 		0% {
@@ -82,7 +84,7 @@
 	}
 
 	.readMore {
-		color: white;
+		color: orange;
 		text-decoration: none;
 		padding: 20px;
 		max-width: 100px;
