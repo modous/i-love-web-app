@@ -18,7 +18,7 @@
 						<img src={image.url} alt="event plaatje" loading="lazy" />
 						<div>
 							<h2 class="notesHeader">-Notes-</h2>
-							<p class="notes">{@html notes.text}</p>
+							<p class="notes">{@html notes.html}</p>
 						</div>
 					</div>
 				</section>

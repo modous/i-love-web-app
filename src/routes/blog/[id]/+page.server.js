@@ -13,7 +13,7 @@ export async function load({ params }) {
 				title
 				date
 				notes {
-					text
+					html
 				}
 				image {
 					url
