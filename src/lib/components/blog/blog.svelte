@@ -2,6 +2,9 @@
 	export let data;
 	console.log('Ik ben hier:', data.id);
 
+	for (const blog of data.blogs) {
+		console.log('mo smurfing', blog.id);
+	}
 	// function spaNavigate(data) {
 	// 	// Fallback for browsers that don't support this API:
 	// 	if (!document.startViewTransition) {
@@ -14,12 +17,12 @@
 	// }
 </script>
 
-{#each data.blogs as { title, date, image, notes } (title)}
+{#each data.blogs as { id, title, date, image } (title)}
 	<section class="blog">
 		<h2>{title}</h2>
 		<date>{date}</date>
 		<img src={image.url} alt="event plaatje" loading="lazy" />
-		<a class="readMore" href="blog/{data.id}">read more ></a>
+		<a class="readMore" href="blog/{id}">read more ></a>
 	</section>
 {/each}
 
@@ -93,6 +96,9 @@
 		transform: scale(1.2);
 		transition-duration: 2s;
 	}
+
+
+    
 
 	/* View transitions */
 

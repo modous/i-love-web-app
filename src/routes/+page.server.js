@@ -1,14 +1,13 @@
 import { HYGRAPH_URL, HYGRAPH_KEY } from '$env/static/private';
 
+
 export async function load({}) {
 	const query = `
-		query Blogs {
+		query myQuery {
 			blogs {
+				id
 				title
 				date
-				notes {
-					html
-				}
 				image {
 					url
 				}
@@ -17,8 +16,10 @@ export async function load({}) {
 	`;
 
 	// const request = await hygraph.request(query);
-	const request = await client({ query, fetch: fetch, endpoint: HYGRAPH_URL });
+	const request = await client({ query, fetch: fetch, endpoint: HYGRAPH_URL, HYGRAPH_KEY });
 
+	
+	// console.log('rat', request);	
 	return {
 		blogs: request.blogs
 	};
