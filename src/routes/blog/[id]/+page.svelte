@@ -16,7 +16,10 @@
 					<date>{date}</date>
 					<div class="imageNotes">
 						<img src={image.url} alt="event plaatje" loading="lazy" />
-						<p>{@html notes.text}</p>
+						<div>
+							<h2 class="notesHeader">-Notes-</h2>
+							<p class="notes">{@html notes.text}</p>
+						</div>
 					</div>
 				</section>
 			{/each}
@@ -29,6 +32,14 @@
 <style>
 	body {
 		margin: 0px;
+	}
+
+	.notes {
+		margin: 20px;
+	}
+
+	.notesHeader {
+		text-align: center;
 	}
 
 	date {
